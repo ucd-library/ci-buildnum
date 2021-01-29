@@ -24,9 +24,9 @@ fi
 # Initialize the build env file.
 if [ ! -f "$BUILD_ENV_FILE" ];then
   echo "#!/usr/bin/env bash" > "$BUILD_ENV_FILE"
-  echo >> "$BUILD_ENV_FILE"
-  echo >> "export CI=true" >> "$BUILD_ENV_FILE"
-  echo >> "export BUILD_TIME=$(date -u +%Y-%m-%dT%H:%M:%S)" >> "$BUILD_ENV_FILE"
+  echo "$BUILD_ENV_FILE"
+  echo "export CI=true" >> "$BUILD_ENV_FILE"
+  echo "export BUILD_TIME=$(date -u +%Y-%m-%dT%H:%M:%S)" >> "$BUILD_ENV_FILE"
   
   chmod +x "$BUILD_ENV_FILE"
 fi
